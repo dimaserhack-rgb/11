@@ -1,0 +1,36 @@
+num_str = input()
+spisok = num_str[-1]
+
+count_3 = 0
+count_last = 0
+count_even = 0
+sum_5 = 0
+prod_7 = 1
+proverka_7 = 0
+count_05 = 0
+
+for char in num_str:
+    digit = int(char)
+    if digit == 3:
+        count_3 += 1
+    if char == spisok:
+        count_last += 1
+    if digit % 2 == 0:
+        count_even += 1
+    if digit > 5:
+        sum_5 += digit
+    if digit > 7:
+        prod_7 *= digit
+        proverka_7 += 1
+    if digit == 0 or digit == 5:
+        count_05 += 1
+
+if proverka_7 == 0:
+    prod_7 = 1
+
+print(f"Количество цифр 3: {count_3}")
+print(f"Сколько раз встречается последняя цифра: {count_last}")
+print(f"Количество чётных цифр: {count_even}")
+print(f"Сумма цифр, больших пяти: {sum_5}")
+print(f"Произведение цифр, больших семи: {prod_7}")
+print(f"Количество цифр 0 и 5 (суммарно): {count_05}")
